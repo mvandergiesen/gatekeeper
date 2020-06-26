@@ -53,6 +53,6 @@ webhooks:
     - CREATE
     - UPDATE
     resources:
-    - namespaces
+    - '*'
   sideEffects: None
   timeoutSeconds: 5

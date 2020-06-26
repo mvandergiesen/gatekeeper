@@ -6,12 +6,11 @@ metadata:
     helm.sh/hook-delete-policy: before-hook-creation
   creationTimestamp: null
   labels:
-    app: '{{ template "gatekeeper.name" . }}'
-    chart: '{{ template "gatekeeper.name" . }}'
+    app: gatekeeper
+    chart: gatekeeper
     controller-tools.k8s.io: "1.0"
-    gatekeeper.sh/system: "yes"
-    heritage: '{{ .Release.Service }}'
-    release: '{{ .Release.Name }}'
+    heritage: gatekeeper
+    release: gatekeeper
   name: constrainttemplates.templates.gatekeeper.sh
 spec:
   group: templates.gatekeeper.sh
