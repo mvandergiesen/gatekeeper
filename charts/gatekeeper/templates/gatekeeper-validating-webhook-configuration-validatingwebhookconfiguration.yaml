@@ -14,7 +14,7 @@ webhooks:
     caBundle: Cg==
     service:
       name: gatekeeper-webhook-service
-      namespace: gatekeeper-system
+      namespace: '{{ .Release.Namespace }}'
       path: /v1/admit
   failurePolicy: Ignore
   name: validation.gatekeeper.sh
@@ -40,7 +40,7 @@ webhooks:
     caBundle: Cg==
     service:
       name: gatekeeper-webhook-service
-      namespace: gatekeeper-system
+      namespace: '{{ .Release.Namespace }}'
       path: /v1/admitlabel
   failurePolicy: Fail
   name: check-ignore-label.gatekeeper.sh
@@ -53,6 +53,6 @@ webhooks:
     - CREATE
     - UPDATE
     resources:
-    - '*'
+    - namespaces
   sideEffects: None
   timeoutSeconds: 5
